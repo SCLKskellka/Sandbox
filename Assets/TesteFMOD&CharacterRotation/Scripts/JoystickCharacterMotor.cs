@@ -5,13 +5,15 @@ namespace Player
 {
     public class JoystickCharacterMotor : MonoBehaviour
     {
-        
         [SerializeField] private float xPower = 600;
         [SerializeField] private float yPower = 600;
+
+        private Animator _animator;
         private Rigidbody _rb;
 
         private void Awake() {
             _rb = GetComponent<Rigidbody>();
+            _animator = GetComponent<Animator>();
         }
 
         public void MouvementJ(InputAction.CallbackContext ctx) {
@@ -21,6 +23,8 @@ namespace Player
             if(ctx.ReadValue<Vector2>().y > 0.1 || ctx.ReadValue<Vector2>().y < -0.1)
                 vec.y = Mathf.Clamp(vec.y *yPower, -500f,500f);
             _rb.velocity = new Vector3(vec.x,0,vec.y) * Time.fixedDeltaTime;
+            _animator.SetFloat("VelocityX", _rb.velocity.x);
+            _animator.SetFloat("VelocityY", _rb.velocity.z);
         }
     }
 }
