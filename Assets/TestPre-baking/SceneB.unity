@@ -134,14 +134,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ST_Cell_B
       objectReference: {fileID: 0}
-    - target: {fileID: 7992110897806361776, guid: a709e38394dda124ea392642bfecb5a1, type: 3}
-      propertyPath: m_Range
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 7992110897806361776, guid: a709e38394dda124ea392642bfecb5a1, type: 3}
-      propertyPath: m_Lightmapping
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9132589826582996192, guid: a709e38394dda124ea392642bfecb5a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
